@@ -1,3 +1,3 @@
 import './styles/style.scss';
 
-console.log('Hello npm project!');
+console.log('Hello World!');
