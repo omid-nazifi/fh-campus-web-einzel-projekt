@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-  </head>
-  <body>
-    <h1><%= htmlWebpackPlugin.options.title %></h1>
 
-    <div id="app"></div>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-bg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index.html">
+        <!-- <img src=<%= require("./images/fh_logo.svg") %> class="logo" alt="fh campus wien logo"> -->
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Die FH</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Studium & Weiterbildung</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown04">
+              <li><a class="dropdown-item" href="#">Bachelor</a></li>
+              <li><a class="dropdown-item" href="#">Master und Masterlehrgänge</a></li>
+              <li><a class="dropdown-item" href="#">Akademische Lehrgänge</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <div class="input-group w-100">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <span class="input-group-text" id="basic-addon1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+</svg>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="bg-light p-5 rounded">
+      <h1>Navbar example</h1>
+      <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it
+        will remain fixed to the top of your browser’s viewport.</p>
+      <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+    </div>
+  </main>
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
 </html>
