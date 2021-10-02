@@ -1,24 +1,2 @@
-$nav-color: #4b5059;
-
-body {
-  min-height: 75rem;
-  padding-top: 4.5rem;
-}
-
-.navbar-bg {
-  background-color: $nav-color;
-}
-
-.navbar .container-fluid .navbar-brand .logo {
-  width: auto;
-  position: relative;
-  border-radius: 0 !important;
-  margin: 0;
-  padding: 0;
-  width: 130px;
-  height: 60px;
-  margin-left: 20px;
-  float: left;
-  -moz-border: 0;
-  background: transparent;
-}
+@import "custom";
+@import "~bootstrap/scss/bootstrap";

@@ -28,7 +28,18 @@ module.exports = {
     new CleanWebpackPlugin,
     new HtmlWebpackPlugin({
       title: "Basic Single Project",
+      filename: "index.html",
       template: path.resolve(__dirname, './src/index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      title: "User list",
+      filename: "users.html",
+      template: path.resolve(__dirname, './src/users.html'),
+    }),
+    new HtmlWebpackPlugin({
+      title: "About Us",
+      filename: "about.html",
+      template: path.resolve(__dirname, './src/about.html'),
     }),
     new FaviconsWebpackPlugin(path.resolve(__dirname, './src/images/favicon.ico'))
   ],
