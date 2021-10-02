@@ -5,10 +5,10 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   // 1
-  // Use the src/index.js file as entry point to bundle it.
-  // If the src/index.js file imports other JS files,
+  // Use the src/scripts/index.js file as entry point to bundle it.
+  // If the src/scripts/index.js file imports other JS files,
   // bundle them as well
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: path.resolve(__dirname, './src/scripts/index.js'),
   // 2
   // The bundles source code files shall result in a bundle.js file
   // in the /dist folder
@@ -29,19 +29,19 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Basic Single Project",
       filename: "index.html",
-      template: path.resolve(__dirname, './src/index.html'),
+      template: path.resolve(__dirname, './src/html/index.html'),
     }),
     new HtmlWebpackPlugin({
       title: "User list",
       filename: "users.html",
-      template: path.resolve(__dirname, './src/users.html'),
+      template: path.resolve(__dirname, './src/html/users.html'),
     }),
     new HtmlWebpackPlugin({
       title: "About Us",
       filename: "about.html",
-      template: path.resolve(__dirname, './src/about.html'),
+      template: path.resolve(__dirname, './src/html/about.html'),
     }),
-    new FaviconsWebpackPlugin(path.resolve(__dirname, './src/images/favicon.ico'))
+    new FaviconsWebpackPlugin(path.resolve(__dirname, './src/assets/favicon.ico'))
   ],
   // 5 
   // Integrate Babel in the build process
