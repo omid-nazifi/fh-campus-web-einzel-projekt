@@ -41,6 +41,11 @@ module.exports = {
       filename: "about.html",
       template: path.resolve(__dirname, './src/html/about.html'),
     }),
+    new HtmlWebpackPlugin({
+      title: "Pricing",
+      filename: "pricing.html",
+      template: path.resolve(__dirname, './src/html/pricing.html'),
+    }),
     new FaviconsWebpackPlugin(path.resolve(__dirname, './src/assets/favicon.ico'))
   ],
   // 5 
