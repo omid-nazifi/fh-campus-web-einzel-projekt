@@ -8,13 +8,20 @@ module.exports = {
   // Use the src/scripts/index.js file as entry point to bundle it.
   // If the src/scripts/index.js file imports other JS files,
   // bundle them as well
-  entry: path.resolve(__dirname, './src/scripts/index.js'),
+  entry: {
+    index: path.resolve(__dirname, './src/scripts/index.js'),
+    users: path.resolve(__dirname, './src/scripts/users.js'),
+    contact: path.resolve(__dirname, './src/scripts/contact.js'),
+  },
   // 2
   // The bundles source code files shall result in a bundle.js file
   // in the /dist folder
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.js'
+    clean: true,
+    filename: '[name].bundle.js',
+    chunkFilename: '[id].bundle_[chunkhash].js',
+    sourceMapFilename: '[file].map'
   },
   // 3
   // The /dist folder will be used to serve our application
@@ -30,21 +37,25 @@ module.exports = {
       title: "Basic Single Project",
       filename: "index.html",
       template: path.resolve(__dirname, './src/html/index.html'),
+      chunks: ['index'],
     }),
     new HtmlWebpackPlugin({
       title: "User list",
       filename: "users.html",
       template: path.resolve(__dirname, './src/html/users.html'),
+      chunks: ['users'],
     }),
     new HtmlWebpackPlugin({
       title: "About Us",
       filename: "about.html",
       template: path.resolve(__dirname, './src/html/about.html'),
+      chunks: ['contact'],
     }),
     new HtmlWebpackPlugin({
       title: "Pricing",
       filename: "pricing.html",
       template: path.resolve(__dirname, './src/html/pricing.html'),
+      chunks: ['index'],
     }),
     new FaviconsWebpackPlugin(path.resolve(__dirname, './src/assets/favicon.ico'))
   ],

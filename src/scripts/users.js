@@ -2,13 +2,26 @@ require("../scripts/app");
 import { isEmpty, parseJson } from './utils';
 import User from './user';
 
-function load3RandomUsers() {
-    var count = 3;
+// global variables
+let userCount = 100;
+let nationality = "";
+let gender = "";
+
+function init() {
+    loadRandomUsers();
+
+    window.filterByCount = filterByCount;
+    window.filterByNationality = filterByNationality;
+    window.filterByGender = filterByGender;
+}
+
+function loadRandomUsers() {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
         createSlider(this.responseText);
     }
-    xhttp.open("GET", "https://randomuser.me/api/?results=" + count, true);
+    
+    xhttp.open("GET", "https://randomuser.me/api/?&results=" + userCount + "&nat=" + nationality + "&gender=" + gender, true);
     xhttp.send();
 }
 
@@ -41,4 +54,34 @@ function createSlid(user, isActive) {
   "</div>";
 }
 
-load3RandomUsers();
+function filterByCount() {
+    var input = document.getElementById('userCount');
+    if (input.value) {
+        userCount = input.value;
+    } else {
+        userCount = 100
+    }
+    loadRandomUsers();
+}
+
+function filterByNationality() {
+    var input = document.getElementById('userNat');
+    if (input.value) {
+        nationality = input.value;
+    } else {
+        nationality = ""
+    }
+    loadRandomUsers();
+}
+
+function filterByGender() {
+    var input = document.getElementById('userGender');
+    if (input.value) {
+        gender = input.value;
+    } else {
+        gender = ""
+    }
+    loadRandomUsers();
+}
+
+init();
