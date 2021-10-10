@@ -49,7 +49,7 @@ module.exports = {
       title: "About Us",
       filename: "about.html",
       template: path.resolve(__dirname, './src/html/about.html'),
-      chunks: ['contact'],
+      chunks: ['contact']
     }),
     new HtmlWebpackPlugin({
       title: "Pricing",
